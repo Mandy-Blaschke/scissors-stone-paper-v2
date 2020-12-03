@@ -1,0 +1,22 @@
+
+img {
+  width: 100px;
+  height: 100px;
+  margin: 25px;
+  padding: 10px;
+}
+
+
+.options, .toggle {
+  display: flex;
+}
+
+
+.choices {
+  display: flex;
+
+  .choice {
+    display: flex;
+    flex-direction: column;
+  }
+}
