@@ -1,64 +1,76 @@
 <main>
 
-  <h1>Schere Stein Papier</h1>
+  <div class="game-box">
 
-  <h3>Auswahl</h3>
-  <div class="options">
-    <div *ngFor="let option of optionsPlayer">
-      <img src="{{option.img}}" alt="{{option.name}}"
-           (click)="startGame(option)"
-      >
-    </div>
-  </div>
+    <div class="left">
+      <h1>Schere Stein Papier</h1>
 
-  <div class="game">
+      <div class="game">
 
-    <div class="player">
+        <div class="player">
 
-      <h2>Du:</h2>
+          <h2 class="gamester">Du:</h2>
 
-      <div class="toggle" *ngIf="!gameFinished">
-        <ng-container class="player" *ngFor="let option of optionsPlayer">
-          <img *ngIf="option.visible"
-               src="{{option.img}}" alt="{{option.name}}">
-        </ng-container>
-      </div>
+          <div class="toggle" *ngIf="!gameFinished">
+            <ng-container class="player" *ngFor="let option of optionsPlayer">
+              <img *ngIf="option.visible"
+                   src="{{option.img}}" alt="{{option.name}}">
+            </ng-container>
+          </div>
 
-      <div class="choices" *ngIf="gameFinished">
-        <div class="choice">
-          <img src="{{playersChoice.img}}" alt="{{playersChoice.name}}">
+          <div class="choices" *ngIf="gameFinished">
+            <div class="choice">
+              <img src="{{playersChoice.img}}" alt="{{playersChoice.name}}">
+            </div>
+          </div>
+
         </div>
-      </div>
 
-    </div>
+        <div class="computer">
 
-    <div class="computer">
+          <h2 class="gamester">Computer:</h2>
 
-      <h2>Computer:</h2>
-
-      <div class="toggle" *ngIf="!gameFinished">
-        <ng-container class="computer" *ngFor="let opt of optionsCmp">
-          <img *ngIf="opt.visible"
-               src="{{opt.img}}" alt="{{opt.name}}">
-        </ng-container>
-      </div>
+          <div class="toggle" *ngIf="!gameFinished">
+            <ng-container class="computer" *ngFor="let opt of optionsCmp">
+              <img *ngIf="opt.visible"
+                   src="{{opt.img}}" alt="{{opt.name}}">
+            </ng-container>
+          </div>
 
 
-      <div class="choices" *ngIf="gameFinished">
-        <div class="choice">
-          <img src="{{computersChoice.img}}" alt="{{computersChoice.name}}">
+          <div class="choices" *ngIf="gameFinished">
+            <div class="choice">
+              <img src="{{computersChoice.img}}" alt="{{computersChoice.name}}">
+            </div>
+
+          </div>
+
         </div>
 
       </div>
 
+      <h1 *ngIf="showWinner" class="winner">{{winner}}</h1>
+    </div>
+
+    <div class="right">
+      <h3>Wähle:</h3>
+      <div class="options">
+        <div *ngFor="let option of optionsPlayer">
+          <img src="{{option.img}}" alt="{{option.name}}"
+               (click)="startGame(option)"
+          >
+        </div>
+      </div>
+
+      <button (click)="reset()">
+      <!--
+      *ngIf="showWinner"
+      -->
+      Neue Runde</button>
     </div>
 
   </div>
 
-
-  <h1 *ngIf="showWinner">{{winner}}</h1>
-
-  <button (click)="reset()" *ngIf="showWinner">Neue Runde?</button>
 
 
 </main>
