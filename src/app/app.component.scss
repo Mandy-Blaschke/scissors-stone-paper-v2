@@ -1,22 +1,76 @@
-
-img {
-  width: 100px;
-  height: 100px;
-  margin: 25px;
-  padding: 10px;
-}
-
-
-.options, .toggle {
+main {
   display: flex;
-}
+  flex-direction: column;
+  align-items: center;
 
+  img {
+    width: 100px;
+    height: 100px;
+    margin: 25px;
+    padding: 10px;
+  }
 
-.choices {
-  display: flex;
-
-  .choice {
+  .game, .options {
     display: flex;
-    flex-direction: column;
+  }
+
+  .options {
+    img {
+      width: 75px;
+      height: 75px;
+      margin: 25px;
+      padding: 10px;
+    }
+  }
+
+  .game {
+    width: 80%;
+    margin: 25px 0;
+
+    .player, .computer {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .toggle {
+        img {
+          animation: toggle linear 300ms;
+        }
+      }
+    }
+
+    .choices {
+      .choice {
+        img {
+          animation: toggle ease-in-out 200ms;
+        }
+      }
+    }
+  }
+}
+
+@keyframes toggle {
+  0% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  25% {
+    opacity: 0.25;
+    transform: rotate(-25deg);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: rotate(0deg);
+  }
+
+  75% {
+    opacity: 0.75;
+    transform: rotate(25deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
   }
 }

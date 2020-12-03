@@ -46,12 +46,14 @@ export class AppComponent implements OnInit {
   winner = undefined;
   gameFinished: boolean;
   playerCanClick = true;
+  showWinner = false;
 
 
   ngOnInit(): void {
   }
 
   reset(): void {
+    this.showWinner = false;
     this.playerCanClick = true;
     this.playersChoice = undefined;
     this.computersChoice = undefined;
@@ -62,22 +64,29 @@ export class AppComponent implements OnInit {
   }
 
   startGame(option): void {
-    if (this.playerCanClick){
+
+    if (this.playerCanClick) {
       this.playersChoice = option;
       this.playerCanClick = false;
       this.computersChoice = this.optionsCmp[Math.floor(Math.random() * this.optionsCmp.length)];
+
       this.toggleImages();
+
       setTimeout(() => {
         this.playersChoice.visible = true;
         this.computersChoice.visible = true;
-      }, 1400);
+      }, 2400);
+
       setTimeout(() => {
         this.checkWinner();
         this.gameFinished = true;
-      }, 1600);
+      }, 2800);
+
+      setTimeout(() => {
+        this.showWinner = true;
+      }, 3800);
     }
   }
-
 
 
   checkWinner(): void {
@@ -106,27 +115,27 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       a1[0].visible = false;
       a2[0].visible = false;
-    }, 400);
+    }, 600);
 
     setTimeout(() => {
       a1[1].visible = true;
       a2[1].visible = true;
-    }, 600);
+    }, 1000);
 
     setTimeout(() => {
       a1[1].visible = false;
       a2[1].visible = false;
-    }, 800);
+    }, 1400);
 
     setTimeout(() => {
       a1[2].visible = true;
       a2[2].visible = true;
-    }, 1000);
+    }, 1800);
 
     setTimeout(() => {
       a1[2].visible = false;
       a2[2].visible = false;
-    }, 1200);
+    }, 2200);
   }
 }
 
