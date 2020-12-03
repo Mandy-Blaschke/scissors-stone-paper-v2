@@ -47,12 +47,15 @@ export class AppComponent implements OnInit {
   gameFinished: boolean;
   playerCanClick = true;
   showWinner = false;
-
+  playerLoser: boolean;
+  cmpLoser: boolean;
 
   ngOnInit(): void {
   }
 
   reset(): void {
+    this.playerLoser = false;
+    this.cmpLoser = false;
     this.showWinner = false;
     this.playerCanClick = true;
     this.playersChoice = undefined;
@@ -98,8 +101,10 @@ export class AppComponent implements OnInit {
       this.computersChoice.name === 'papier' && this.playersChoice.name === 'stein'
     ) {
       this.winner = 'Computer gewinnt!';
+      this.playerLoser = true;
     } else {
       this.winner = 'Du gewinnst!';
+      this.cmpLoser = true;
     }
   }
 
