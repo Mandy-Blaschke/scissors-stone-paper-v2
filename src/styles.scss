@@ -7,6 +7,14 @@ body, button {
   font-size: 25px;
   background-color: rgb(255, 246, 255);
   color: #a92e95;
+
+  @media (max-width: 620px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 15px;
+  }
 }
 
 

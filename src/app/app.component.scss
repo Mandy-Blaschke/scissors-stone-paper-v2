@@ -1,3 +1,5 @@
+$turquoise: #02886f;
+
 main {
   display: flex;
   flex-direction: column;
@@ -17,8 +19,12 @@ main {
     width: 100px;
     height: 100px;
     margin: 25px;
-    padding: 10px;
     filter: drop-shadow(0px 0px 2px #3e3e3e);
+
+    @media (max-width: 520px) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   .lost {
@@ -32,11 +38,20 @@ main {
     display: flex;
     width: 100%;
 
+    @media (max-width: 670px) {
+      flex-direction: column-reverse;
+    }
+
     .left {
       width: 80%;
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      @media (max-width: 670px) {
+        width: 100%;
+        flex-direction: column-reverse;
+      }
 
       .game {
         display: flex;
@@ -65,6 +80,10 @@ main {
         animation: fading linear 3s infinite;
         color: ghostwhite;
         text-shadow: 1px 1px 0 #5f1853;
+
+        @media (max-width: 520px) {
+          margin: 35px 0;
+        }
       }
     }
 
@@ -78,12 +97,31 @@ main {
       flex-direction: column;
       align-items: center;
 
+      @media (max-width: 670px) {
+        flex-direction: row;
+        width: 100%;
+        margin-top: 25px;
+      }
+
+      @media (max-width: 510px) {
+        flex-direction: column;
+      }
+
       .options {
+
+        @media (max-width: 670px) {
+          display: flex;
+        }
+
         img {
           width: 75px;
           height: 75px;
           margin: 25px;
-          padding: 10px;
+
+          @media (max-width: 670px) {
+            width: 55px;
+            height: 55px;
+          }
 
           &:hover, &:active {
             cursor: pointer;
@@ -102,6 +140,10 @@ main {
         border-radius: 6px;
         padding: 5px 10px;
         box-shadow: 2px 2px 2px #5b5b5b;
+
+        @media (max-width: 620px){
+          font-size: 20px;
+        }
 
         &:hover, &:active {
           cursor: pointer;
@@ -158,31 +200,31 @@ main {
     color: ghostwhite;
     opacity: 0.25;
     transform: rotate(0deg);
-    text-shadow: 0 1px 15px #c1218c;
+    text-shadow: 0 1px 15px $turquoise;
   }
   25% {
     color: ghostwhite;
     opacity: 0.5;
     transform: rotate(-5deg) scale(1.2);
-    text-shadow: 0 1px 20px #c1218c;
+    text-shadow: 0 1px 20px $turquoise;
   }
   50% {
     color: ghostwhite;
     opacity: 1;
     transform: rotate(0deg) scale(1.5);
-    text-shadow: 0 1px 30px #c1218c;
+    text-shadow: 0 1px 30px $turquoise;
   }
   75% {
     color: ghostwhite;
     opacity: 0.5;
     transform: rotate(5deg) scale(1.2);
-    text-shadow: 0 1px 20px #c1218c;
+    text-shadow: 0 1px 20px $turquoise;
   }
   100% {
     color: ghostwhite;
     opacity: 0.25;
     transform: rotate(0deg);
-    text-shadow: 0 1px 15px #c1218c;
+    text-shadow: 0 1px 15px $turquoise;
   }
 }
 

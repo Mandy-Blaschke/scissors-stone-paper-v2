@@ -1,4 +1,5 @@
 <main>
+
 <h1>Schere Stein Papier</h1>
 
   <div class="border"></div>
@@ -42,7 +43,6 @@
             </ng-container>
           </div>
 
-
           <div class="choices" *ngIf="gameFinished">
             <div class="choice">
               <img src="{{computersChoice.img}}" alt="{{computersChoice.name}}"
@@ -50,7 +50,6 @@
                [class.won]="!cmpLoser"
               >
             </div>
-
           </div>
 
         </div>
@@ -58,10 +57,13 @@
       </div>
 
       <h1 *ngIf="showWinner" class="winner">{{winner}}</h1>
+
     </div>
 
     <div class="right">
+
       <h3>Wähle</h3>
+
       <div class="options">
         <div *ngFor="let option of optionsPlayer">
           <img src="{{option.img}}" alt="{{option.name}}"
@@ -70,16 +72,12 @@
         </div>
       </div>
 
-      <button (click)="reset()">
-      <!--
-      *ngIf="showWinner"
-      -->
+      <button (click)="reset()" *ngIf="showWinner">
       Neue Runde</button>
+
     </div>
 
   </div>
-
-
 
 </main>
 
