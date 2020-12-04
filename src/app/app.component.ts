@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   optionsCmp: Option[] = [
     {
       name: 'schere',
-      img: 'assets/scissors.png',
+      img: 'assets/scissors.webp',
       visible: false,
     },
     {
@@ -20,14 +20,14 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'papier',
-      img: 'assets/paper.png',
+      img: 'assets/paper.webp',
       visible: false,
     }
   ];
   optionsPlayer: Option[] = [
     {
       name: 'schere',
-      img: 'assets/scissors.png',
+      img: 'assets/scissors.webp',
       visible: false,
     },
     {
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit {
     },
     {
       name: 'papier',
-      img: 'assets/paper.png',
+      img: 'assets/paper.webp',
       visible: false,
     }
   ];
