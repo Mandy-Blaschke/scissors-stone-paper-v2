@@ -67,6 +67,7 @@
       <div class="options">
         <div *ngFor="let option of optionsPlayer">
           <img src="{{option.img}}" alt="{{option.name}}"
+               [class.not-clickable]="!playerCanClick"
                (click)="startGame(option)"
           >
         </div>

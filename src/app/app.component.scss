@@ -118,6 +118,12 @@ main {
           height: 75px;
           margin: 25px;
 
+          &.not-clickable {
+            pointer-events: none;
+            outline: none;
+            user-select: none;
+          }
+
           @media (max-width: 670px) {
             width: 55px;
             height: 55px;
